@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load tz %}
+{% block content %}
+<link rel="stylesheet" href="{% static "assets/css/styleinv.css" %}">
+<div class="container">
+<form action="" method="post">{% csrf_token %}
+    <h1>Invoice # </h1>
+  <p>
+  <br>
+    <div class="col-md-8">
+    <label for="date" style="font-size: 1.2em;">Invoice Date</label>
+    <span type="date" value="" style="padding-left: 17px;">&nbsp;{% now "jS F Y" %}</span>
+    </div>
+
+  <label style="font-size: 1.2em;">#Products</label>
+
+  <input type="text" id="productcount" name="productcount" value="2" style="width: 3%; background: #ffffff; border-bottom: none; " disabled>
+
+  </p>
+  <p>
+  <div class="col-md-2">
+  <label for="to">To :</label>
+  </div>
+  <input type="text" name="customer" >
+  </p>
+  <p>
+  <div class="col-md-2">
+  <label for="email">Email :</label>
+  </div>
+  <input type="text" name="email">
+
+  </p>
+
+  <br>
+  <table class="items-table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Tax</th>
+        <th>Total price</th>
+        <th></th>
+      </tr>
+    </thead>
+    <br>
+    <tbody id="items">
+      <tr id="item-1">
+        <td>
+          <select  id="productname" name="productname" onchange="pricechange()">
+          <option value="Select a Product">Select A Product</option>
+          {% for instance in productinstance %}
+          <option value="{{ instance.name }}">{{ instance.name }}</option>
+          {% endfor %}
+        </select>
+        </td>
+        <td><input type="number" class="price" name="price1" step="1" value=""></td>
+        <td><input type="number" class="quantity" name="quantity1" step="1" value="0"></td>
+        <td>
+          <select name="tax" id="" class="tax_rate">
+          <option value="">None</option>
+          <option value="21">IVA 21%</option>
+          <option value="14">IVA 14%</option>
+        </select>
+        </td>
+        <td class="total-price">€ 0,00</td>
+        <td><a href="#" class="delete">x</a></td>
+      </tr>
+    </tbody>
+  </table>
+  <br>
+  <a href="" id="addItemButton">+</a>
+  <table class="invoice-totals">
+    <tbody>
+      <tr>
+        <th>Subtotal</th>
+        <td id="invoiceSubtotal">€ 0,00</td>
+      </tr>
+      <tr class="tax-container">
+        <td colspan="2">
+          <table id="taxs">
+            <thead>
+              <tr>
+                <th>Tax rate</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Total Tax</th>
+                <td id="invoiceTax">€ 0,00</td>
+              </tr>
+            </tfoot>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <th>Total Invoice</th>
+        <th><input type="text" name="invoiceTotal" value="" id="invoiceTotal"></th>
+      </tr>
+    </tbody>
+<div class="demo"></div>
+  </table>
+
+
+</div>
+ <center><input type="submit"></center>
+</form>
+<script src="{% static "assets/js/jquery/jquery-2.1.0.js" %}"></script>
+<script>
+
+
+function getCookie(name) {
+    var cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        var cookies = document.cookie.split(';');
+        for (var i = 0; i < cookies.length; i++) {
+            var cookie = jQuery.trim(cookies[i]);
+            // Does this cookie string begin with the name we want?
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+var csrftoken = getCookie('csrftoken');
+function pricechange()
+{
+var pro ='#item-'+(i-1)+' #productname';
+var product = $(pro).val();
+var dat = {"product":product };
+ $.ajax({
+						type: 'GET',
+						url: "/product/invoice/",
+						data: dat ,
+						headers: {
+							'X-CSRFToken': csrftoken,
+						},
+						success:function(resp){
+						// the i from the variable
+						var countvariable = i-1;
+						var variab = 'input[name=price'+countvariable+']';
+
+						$(variab).attr("value",parseFloat(resp));
+						$(variab).val(parseFloat(resp));
+						},
+						error:function(xhr, status, error){
+						alert(status.responseText);
+						alert(error.responseText);
+						}
+			});
+}
+</script>
+<script src="{% static "assets/js/jquery/jquery-2.1.0.js" %}"></script>
+<script src="{% static "assets/js/in.js" %}"></script>
+{% endblock %}

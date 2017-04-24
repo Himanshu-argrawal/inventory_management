@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<script type="text/javascript">
+    function validateForm() {
+    var k=0;
+    var x = document.forms["myForm"]["name"].value;
+    if (x == "") {
+        document.getElementById('demo1').innerHTML = " &emsp; * This field can not be empty";
+        k=1;
+    }
+    x = document.forms["myForm"]["product_code"].value;
+    if (x == "") {
+        document.getElementById('demo2').innerHTML = " &emsp; * This field can not be empty";
+        k=1;
+    }
+    x = document.forms["myForm"]["product_minstock"].value;
+    if (x == "") {
+        document.getElementById('demo3').innerHTML = " &emsp; * This field can not be empty";
+        k=1;
+    }
+    x = document.forms["myForm"]["product_count"].value;
+    if (x == "") {
+        document.getElementById('demo4').innerHTML = " &emsp; * This field can not be empty";
+        k=1;
+    }
+    else if (x==0){
+        document.getElementById('demo4').innerHTML = " &emsp; * This field can not be zero";
+        k=1;
+    }
+    x = document.forms["myForm"]["product_cost"].value;
+    if (x == "") {
+        document.getElementById('demo5').innerHTML = " &emsp; * This field can not be empty";
+        k=1;
+    }
+    x = document.forms["myForm"]["product_sell"].value;
+    if (x == "") {
+        document.getElementById('demo6').innerHTML = " &emsp; * This field can not be empty";
+        k=1;
+    }
+    if(k == 1)
+    {
+        return false;
+    }
+}
+</script>
+<form name="myForm" action="" onsubmit="return validateForm()" method="post">{% csrf_token %}
+    <div class="container">
+    <div class="row" style="border-bottom: 1px solid black; font-size: 1.9em; padding-bottom: 5px; padding-top: 5px;">
+    New Product
+    </div>
+
+    <div class="row" style="margin: 40px;">
+            <div class="col-md-3">
+            Item Name
+            </div>
+            <div class="col-md-9" >
+            <input type="text" name="name" placeholder="Item name"><span id="demo1" style="color: red; font-size: 1.1em" > </span>
+            </div>
+            <br><br>
+            <div class="col-md-3">
+            Unique Product Code
+            </div>
+            <div class="col-md-9" >
+            <input type="text" name="product_code" placeholder="Unique Product Code"><span id="demo2" style="color: red; font-size: 1.1em" > </span>
+            </div>
+            <br><br>
+            <div class="col-md-3">
+            SKU(Minimum Stock)
+            </div>
+            <div class="col-md-9" >
+            <input type="text" name="product_minstock" placeholder="Minimun Stock"><span id="demo3" style="color: red; font-size: 1.1em" > </span>
+            </div>
+            <br><br>
+            <div class="col-md-3">
+            Unit
+            </div>
+            <div class="col-md-9" >
+            <input type="text" name="product_count" placeholder="Unit"><span id="demo4" style="color: red; font-size: 1.1em" > </span>
+            </div>
+            <br><br>
+            <div class="col-md-3">
+            Cost Price
+            </div>
+            <div class="col-md-9" >
+            <input type="text" name="product_cost" placeholder="Cost Price"><span id="demo5" style="color: red; font-size: 1.1em" > </span>
+            </div>
+            <br><br>
+            <div class="col-md-3">
+            Selling Price
+            </div>
+            <div class="col-md-9" >
+            <input type="text" name="product_sell" placeholder="Selling Price"><span id="demo6" style="color: red; font-size: 1.1em" > </span>
+            </div>
+            <br><br>
+            <div class="col-md-3">
+            Tax Name
+            </div>
+            <div class="col-md-9" >
+            <input type="text" name="tax_name" placeholder="Tax name">
+            </div>
+            <br><br>
+            <div class="col-md-3">
+            Tax rate
+            </div>
+            <div class="col-md-9" >
+            <input type="number" name="tax_rate" placeholder="Tax rate">
+            </div>
+            <br><br><br>
+            <div class="" style="padding-left: 26.5%;">
+            <input type="submit" class="btn-info" style="width: 20% ; margin: auto;" value="Add">
+            </div>
+    </div>
+   </div>
+</form>
+{% endblock %}

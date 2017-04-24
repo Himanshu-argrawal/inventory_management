@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row" style="border-bottom: 1px solid black;color: black; font-size: 1.9em; padding-bottom: 5px; padding-top: 5px;">
+    Overview
+    </div>
+    <div class="row" style="height: 30px;">
+
+    </div>
+    <div class="row" style="color: black;font-size: 1.2em;">
+        <div class="col-md-6">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Item Name :
+            </div>
+            <div class="col-md-7">
+            <b>{{ instance.name }}</b>
+            </div>
+            <br><br>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Item Code
+            </div>
+            <div class="col-md-7">
+            {{ instance.product_code }}
+            </div>
+            <br><br>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Purchase Cost:
+            </div>
+            <div class="col-md-7">
+            {{ instance.product_cost }}
+            </div>
+            <br><br>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Tax Name:
+            </div>
+            <div class="col-md-7">
+            {{ instance.tax_name }}
+            </div>
+            <br><br>
+        </div>
+        <div class="col-md-6">
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Purchase Amount :
+            </div>
+            <div class="col-md-7">
+            <b>{{ instance.product_total }}</b>
+            </div>
+            <br><br>
+             <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Product Sold
+            </div>
+            <div class="col-md-7">
+            {{ instance.product_sold }}
+            </div>
+            <br><br>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Selling Price
+            </div>
+            <div class="col-md-7">
+            {{ instance.product_sell }}
+            </div>
+            <br><br>
+            <div class="col-md-1">
+            </div>
+            <div class="col-md-4">
+            Tax Rate :
+            </div>
+            <div class="col-md-7">
+            {{ instance.tax_rate }}
+            </div>
+            <br><br>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

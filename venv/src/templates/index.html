@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<!--[if IE 8 ]><html class="no-js oldie ie8" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+
+   <!--- basic page needs
+   ================================================== -->
+   <meta charset="utf-8">
+	<title>Teja</title>
+	<meta name="description" content="">  
+	<meta name="author" content="">
+
+   <!-- mobile specific metas
+   ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	{% load static %}
+ 	<!-- CSS
+   ================================================== -->
+   <link rel="stylesheet" href="{% static "assets/css/base.css" %}">
+   <link rel="stylesheet" href="{% static "assets/css/main1.css" %}">
+   <link rel="stylesheet" href="{% static "assets/css/vendor.css"%}">
+
+   <!-- script
+   ================================================== -->
+	<script src="{% static "assets/js/modernizr.js"%}"></script>
+
+   <!-- favicons
+	================================================== -->
+	<link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body id="top" >
+
+	<!-- header 
+   ================================================== -->
+   <header >
+
+   	<div class="row">
+
+   		<div class="logo">
+	         <a href="index.html">Teja</a>
+	      </div>
+
+	   	<nav id="main-nav-wrap">
+				<ul class="main-navigation" style="color: #F64815;">
+					<li class="current"><a class="smoothscroll"  href="#intro" title="" style="color: white;">Home</a></li>
+					<li><a class="smoothscroll"  href="#process" title="" style="color: white;">Process</a></li>
+					<li><a class="smoothscroll"  href="#features" title="" style="color: white;">Features</a></li>
+					<li><a class="smoothscroll"  href="#pricing" title="" style="color: white;">Pricing</a></li>
+					<li><a class="smoothscroll"  href="#faq" title="" style="color: white;">FAQ</a></li>					
+					<li class="highlight with-sep"><a href="{% url "accounts:login" %}" style="color: white;">Sign In</a></li>
+				</ul>
+			</nav>
+
+			<a class="menu-toggle" href="{% url "accounts:login" %}"><span>Menu</span></a>
+   		
+   	</div>   	
+   	
+   </header> <!-- /header -->
+
+	<!-- intro section
+   ================================================== -->
+	
+   <section id="intro" style="background: #14181E url({% static 'assets/img/1280x720-data-out-343-6699250-wallpaper-for-laptops-and-notebook.jpg' %}) no-repeat center; ">
+
+   	<div class="shadow-overlay"></div>
+
+   	<div class="intro-content">
+   		<div class="row">
+
+   			<div class="col-twelve">
+
+	   			
+
+	   			<h5 style="color: white;">Hello! welcome to Inventory Control.</h5>
+
+
+
+	   			<h1 style="color: black; font-size: 2.5em;">An online inventory management & accounting software for your buisness</h1>
+
+	   			<a class="button stroke smoothscroll" href="#process" title="">Sign up</a>
+
+	   		</div>  
+   			
+   		</div>   		 		
+   	</div> 
+
+   	
+   </section> <!-- /intro -->
+
+
+   <!-- Process Section
+   ================================================== -->
+   
+
+   <!-- features Section
+   ================================================== -->
+	<section id="features" style="background: #14181E ;" >
+
+		<div class="row section-intro">
+   		<div class="col-twelve with-bottom-line">
+
+   			<h5 style="font-size: 1.5em; color: #F64815;">Popular Features</h5>
+   			
+
+   			<p class="lead">Accounting software all the time-saving tools you need to grow your buisness: unlimited users and 24/7 support...  </p>
+
+   		</div>   		
+   	</div>
+
+   	<div class="row features-content">
+
+   		<div class="features-list block-1-3 block-s-1-2 block-tab-full group">
+
+	      	<div class="bgrid feature">	
+
+	      		<span class="icon"><i class="icon-file"></i></span>            
+
+	            <div class="service-content">	
+
+	            	 <h3 class="h05" style="color: #F64815;">Easy Invoices</h3>
+
+		            <p>Create professional invoices and review updates. Get paid for the work you do by sending invoice as soon as job is done.Create and send invoices straight from your phone or tablet right when you finish a job.
+	         		</p>
+	         		
+	         	</div> 	         	 
+
+				</div> <!-- /bgrid -->
+
+				<div class="bgrid feature">	
+
+					<span class="icon"><i class="icon-mobile"></i></span>                          
+
+	            <div class="service-content">	
+	            	<h3 class="h05" style="color: #F64815;">Go Mobile</h3>  
+
+		            <p> App that works with iPhone and iPad & Android phones and tablets.Record your expenses when you’re out and about, and avoid lost receipts when you upload a photo on the mobile app.
+	         		</p>
+
+	         		
+	            </div>	                          
+
+			   </div> <!-- /bgrid -->
+
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-suitcase"></i></span>		            
+
+	            <div class="service-content">
+	            	<h3 class="h05" style="color: #F64815;">Inventory</h3>
+
+		            <p>Inventory items speed up invoicing while tracking sales and purchases.It provides simple inventory tracking that's great for single-location retailers and wholesalers, and even service providers who also sell some retail items.
+	        			</p> 
+
+	        			
+	            </div> 	            	               
+
+			   </div> <!-- /bgrid -->
+
+				<div class="bgrid feature">
+
+					<span class="icon"><i class="icon-file"></i></span>	              
+
+	            <div class="service-content">
+	            	<h3 class="h05" style="color: #F64815;">Create Purchase Orders</h3>
+
+		            <p>Create and email custom purchase orders and copy to bills for payment. Prepare purchase orders quickly using inventory items and email them to your suppliers directly.
+	         		</p> 
+
+	         		
+	            </div>                
+
+				</div> <!-- /bgrid -->
+
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-layers"></i></span>	            
+
+	            <div class="service-content">	
+	            	<h3 class="h05" style="color: #F64815;">Pay Bills</h3>
+
+		            <p>Manage your cashflow by scheduling payments and batch paying suppliers. Spend less time on business admin by bundling multiple bills into one payment transaction.
+	        			</p> 
+
+	        			
+	            </div>	               
+
+			   </div> <!-- /bgrid -->
+
+			   <div class="bgrid feature">
+
+			   	<span class="icon"><i class="icon-upload"></i></span>	   	           
+
+	            <div class="service-content">
+	            	 <h3 class="h05" style="color: #F64815;">Attach files to data</h3>
+
+		            <p>Attach source documents to almost anything in Xero – invoices, bills and more. Attach files and documents to accounting transactions so related information is stored together in the same place.
+	        			</p> 
+	        			
+	            </div>	               
+
+			   </div> <!-- /bgrid -->
+
+	      </div> <!-- features-list -->
+   		
+   	</div> <!-- features-content -->
+		
+	</section> <!-- /features -->
+	
+
+	<!-- pricing
+   ================================================== -->
+
+   
+   <!-- Testimonials Section
+   ================================================== -->
+   <section id="testimonials">
+
+   	<div class="row">
+   		<div class="col-twelve">
+   			<h2 class="h01">Hear What our Clients Say.</h2>
+   		</div>   		
+   	</div>   	
+
+      <div class="row flex-container">
+    
+         <div id="testimonial-slider" class="flexslider">
+
+            <ul class="slides">
+
+               <li>
+               	<div class="testimonial-author">
+                    	<img src="{% static "assets/img/avatars/avataar1.jpg"%}" alt="Author image">
+                    	<div class="author-info">
+                    		Kajal Sanghrajka
+                    		<span class="position">Eyewear Boutique Founder.</span>
+                    	</div>
+                  </div>
+
+                  <p>
+                  In case I haven't said it enough already, I LOVE @InventoryControl. 2 quarters done in just over an hour vs 6+ hrs on old system.
+                  </p>                  
+             	</li> <!-- /slide -->
+
+               <li> 
+
+               	<div class="testimonial-author">
+                    	<img src="{% static "assets/img/avatars/avatar-2.jpg"%}" alt="Author image">
+                    	<div class="author-info">
+                    		Dave Lamason
+                    		<span>Coffee House Owner.</span>
+                    	</div>
+                  </div> 
+
+                  <p>
+                  I freakin love how stream-lined and easy it is to reconcile and complete a tax return with @InventoryControl! Especially on their mobile app. Gd work!
+                  </p>
+                                         
+               </li> <!-- /slide -->
+
+            </ul> <!-- /slides -->
+
+         </div> <!-- /testimonial-slider -->         
+        
+      </div> <!-- /flex-container -->
+
+   </section> <!-- /testimonials -->
+
+
+  
+  
+
+   <!-- footer
+   ================================================== -->
+   <footer>
+
+   	<div class="footer-main">
+
+   		<div class="row">  
+
+	      	<div class="col-four tab-full mob-full footer-info">            
+
+	            <div class="footer-logo"></div>
+
+	            <p style ="color: white;">
+		        	Medi-Caps University <br>
+            		A.B. Road, Pigdamber, Rau <br>
+					Indore - 453331 <br>
+		        	info@medicaps.ac.in;  0731-4259500, 2856294
+		        	</p>
+
+		      </div> <!-- /footer-info -->
+
+	      	<div class="col-two tab-1-3 mob-1-2 site-links">
+
+	      		<h4 style ="color: #F64815;">Site Links</h4>
+
+	      		<ul>
+	      			<li><a href="#" style ="color: white;">About Us</a></li>
+						<li><a href="#" style ="color: white;">Blog</a></li>
+						<li><a href="#" style ="color: white;">FAQ</a></li>
+						<li><a href="#" style ="color: white;">Terms</a></li>
+						<li><a href="#" style ="color: white;">Privacy Policy</a></li>
+					</ul>
+
+	      	</div> <!-- /site-links -->  
+
+	      	<div class="col-two tab-1-3 mob-1-2 social-links">
+
+	      		<h4 style ="color: #F64815;">Social</h4>
+
+	      		<ul>
+	      			<li><a href="#" style ="color: white;">Twitter</a></li>
+						<li><a href="#" style ="color: white;">Facebook</a></li>
+						<li><a href="#" style ="color: white;">Google+</a></li>
+						<li><a href="#" style ="color: white;">Skype</a></li>
+					</ul>
+	      	           	
+	      	</div> <!-- /social --> 
+
+	      	<div class="col-four tab-1-3 mob-full footer-subscribe">
+
+	      		<h4 style ="color: #F64815;">Subscribe</h4>
+
+	      		<p style ="color: white;">Keep yourself updated. Subscribe to our newsletter.</p>
+
+	      		<div class="subscribe-form">
+	      	
+	      			<form id="mc-form" class="group" novalidate="true">
+
+							<input type="email" value="" name="dEmail" class="email" id="mc-email" placeholder="type email &amp; hit enter" required=""> 
+	   		
+			   			<input type="submit" name="subscribe" >
+		   	
+		   				<label for="mc-email" class="subscribe-message"></label>
+			
+						</form>
+
+	      		</div>	      		
+	      	           	
+	      	</div> <!-- /subscribe -->         
+
+	      </div> <!-- /row -->
+
+   	</div> <!-- /footer-main -->
+
+
+      <div class="footer-bottom">
+
+      	<div class="row">
+
+      		<div class="col-twelve">
+	      		<div class="copyright">
+		         	<span>© Copyright @InventoryControl 2017.</span>         	
+		         </div>
+
+		         <div id="go-top" style="display: block;">
+		            <a class="smoothscroll" title="Back to Top" href="#top" style="color: #F64815;"><i class="icon ion-android-arrow-up"></i></a>
+		         </div>         
+	      	</div>
+
+      	</div> <!-- /footer-bottom -->     	
+
+      </div>
+
+   </footer>  
+
+   <div id="preloader"> 
+    	<div id="loader"></div>
+   </div> 
+
+   <!-- Java Script
+   ================================================== --> 
+   <script src="{% static "assets/js/jquery-1.11.3.min.js" %}"></script>
+   <script src="{% static "assets/js/jquery-migrate-1.2.1.min.js"%}"></script>
+   <script src="{% static "assets/js/plugins.js"%}"></script>
+   <script src="{% static "assets/js/main.js"%}"></script>
+
+</body>
+
+</html>

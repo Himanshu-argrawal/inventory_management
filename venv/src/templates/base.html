@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<title>Dashboard |InventoryControl</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    {% load static %}
+	<!-- CSS -->
+	<link rel="stylesheet" href="{% static "assets/css/bootstrap.min.css" %}">
+	<link rel="stylesheet" href="{% static "assets/css/vendor/icon-sets.css" %}">
+	<link rel="stylesheet" href="{% static "assets/css/main.min.css"%}">
+	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+	<link rel="stylesheet" href="{% static "assets/css/demo.css"%}">
+	<!-- GOOGLE FONTS -->
+	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<!-- ICONS -->
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static "assets/img/apple-icon.png"%}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{% static "assets/img/favicon.png"%}">
+</head>
+
+<body>
+	<!-- WRAPPER -->
+	<div id="wrapper">
+		<!-- SIDEBAR -->
+		<div class="sidebar">
+			<div class="brand">
+				 <p style="font-size: 1.5em; padding-top: 15px;color: rgb(0, 160, 240); font-style:normal;">InventoryControl</p>
+			</div>
+			<div class="sidebar-scroll">
+				<nav>
+					<ul class="nav">
+						<li><a href="{% url 'accounts:home' %}" ><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li>
+							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i>
+							<span>Contacts</span> <i class="icon-submenu lnr lnr-chevron-right"></i></a>
+							<div id="subPages" class="collapse ">
+								<ul class="nav">
+									<li><a href="{% url 'contacts:all_customers' %}" class="">Customers</a></li>
+									<li><a href="{% url 'contacts:all_vendors' %}" class="">Vendors</a></li>
+								</ul>
+							</div>
+						</li>
+						<li>
+							<a href="#subPagess" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Items</span> <i class="icon-submenu lnr lnr-chevron-right"></i></a>
+							<div id="subPagess" class="collapse ">
+								<ul class="nav">
+									<li><a href="{% url 'products:product_show' %}" class="">Items</a></li>
+									<li><a href="{% url 'products:product_show_adjust' %}" class="">Adjust Items</a></li>
+								</ul>
+							</div>
+						</li>
+						<li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Sales Order</span></a></li>
+						<li><a href="{% url 'invoice:invoice_generate' %}" class=""><i class="lnr lnr-cog"></i> <span>Invoices</span></a></li>
+						<li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Purchase Orders</span></a></li>
+						
+						<li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Bills</span></a></li>
+						<li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Reports</span></a></li>
+						<li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li>
+					</ul>
+				</nav>
+			</div>
+			<a class="footer" href="http://twitter.com/share?url=https://goo.gl/1dt1MR&amp;text=So cool! Free Bootstrap dashboard template by @thedevelovers. Download at&amp;hashtags=free,bootstrap,dashboard" title="Twitter share" target="_blank"><i class="fa fa-twitter"></i> <span>SHARE THIS FREEBIE</span></a>
+		</div>
+		<!-- END SIDEBAR -->
+		<!-- MAIN -->
+		<div class="main">
+			<!-- NAVBAR -->
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+					<div class="navbar-btn">
+						<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
+					</div>
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-menu">
+							<span class="sr-only">Toggle Navigation</span>
+							<i class="fa fa-bars icon-nav"></i>
+						</button>
+					</div>
+					<div id="navbar-menu" class="navbar-collapse collapse">
+						<form class="navbar-form navbar-left hidden-xs">
+							
+						</form>
+						<ul class="nav navbar-nav navbar-right">
+							
+							<li class="dropdown">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="#">Basic Use</a></li>
+									<li><a href="#">Working With Data</a></li>
+									<li><a href="#">Security</a></li>
+									<li><a href="#">Troubleshooting</a></li>
+								</ul>
+							</li>
+							<li class="dropdown">
+								<a href="{% url 'accounts:logout' %}" style="color: blue">Log out</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<!-- END NAVBAR -->
+			{% block content %}
+
+            {% endblock %}
+        {% block footer %}
+			<footer>
+				<div class="container-fluid">
+					<p class="copyright">&copy; 2017. Designed &amp; by created by Himanshu Agrawal </a></p>
+				</div>
+			</footer>
+        {% endblock %}
+		</div>
+
+		<!-- END MAIN -->
+	</div>
+	<!-- END WRAPPER -->
+	<!-- Javascript -->
+	<script src="{% static "assets/js/jquery/jquery-2.1.0.js" %}"></script>
+	<script src="{% static "assets/js/bootstrap/bootstrap.min.js" %}"></script>
+	<script src="{% static "assets/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"%}"></script>
+	<script src="{% static "assets/js/plugins/jquery-easypiechart/jquery.easypiechart.min.js"%}"></script>
+	<script src="{% static "assets/js/plugins/chartist/chartist.min.js"%}"></script>
+	<script src="{% static "assets/js/klorofil.min.js"%}"></script>
+</body>
+
+</html>

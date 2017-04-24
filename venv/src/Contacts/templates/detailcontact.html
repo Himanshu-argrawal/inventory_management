@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="row" style="height: 20px;">
+</div>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+    <div class="panel">
+        <div class="panel-heading" style="border-bottom: 1px solid">
+        <center>Details</center>
+        </div>
+        <div class="panel-body">
+        <div class="col-md-4">
+        Company Name :
+        </div>
+        <div class="col-md-8">
+        {{ instance.company_name }}
+        </div>
+        </div>
+        <div class="panel-body">
+        <div class="col-md-4">
+        Name :
+        </div>
+        <div class="col-md-8">
+        {{ instance.fname }}{{ instance.lname }}
+        </div>
+        </div>
+
+        <div class="panel-body">
+        <div class="col-md-4">
+        Mobile :
+        </div>
+        <div class="col-md-8">
+        {{ instance.phone }}
+        </div>
+        </div>
+
+        <div class="panel-body">
+        <div class="col-md-4">
+        Address :
+        </div>
+        <div class="col-md-8">
+        {{ instance.address }}
+        </div>
+        </div>
+
+        <div class="panel-body">
+        <div class="col-md-4">
+        Email :
+        </div>
+        <div class="col-md-8">
+        {{ instance.address }}
+        </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,56 @@
+{% load static %}
+{% load bootstrap3 %}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<html lang="en-US">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <title>Login</title>
+
+  <link rel="stylesheet" href="{% static "assets/css/style.css" %}">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Varela+Round">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+ <![endif]-->
+
+</head>
+
+<body  style="background: #14181E url({% static 'assets/img/avatars/loginbckg1.jpg' %}) no-repeat;">
+
+  <div class="container">
+    <div class="col-md-4" >
+    </div>
+    <div class="col-md-6">
+        <div id="login">
+
+            <h2 style ="background: #F64815;"><span class="fontawesome-lock"></span>Sign In</h2>
+
+            <form action="" method="post" class="form">
+                {% csrf_token %}
+                {% bootstrap_form form %}
+                {% buttons %}
+                <button type="submit" class="btn btn-success btn-block" style ="background: #14181E;">Login</button>
+                {% endbuttons %}
+                <span style="font-size: 1.98em;">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp Not a member ? </span>
+                <a style="font-size: 1.6em; color: #0404B4;" href="{% url 'accounts:register' %}">
+                Sign Up
+                </a>
+            </form>
+        </div>
+    </div>
+  </div>
+    <!-- end login -->
+
+
+
+</body>
+
+</html>
+
+
+
+

@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="container">
+	        <div class="col-md-8">
+	        <p style="font-size: 1.5em; padding-top: 15px;color: black; font-style:normal;"">Vendors</p>
+	        </div>
+	        <div class="col-md-4" style="padding-top: 15px;">
+		    <button class="btn-info" style="width: 75px; " >
+		    <a style="color: black;" href="{% url 'contacts:add_contact' %}">New +</a>
+		    </button>
+	        </div>
+        </div>
+        <table class="table table-striped">
+			<thead>
+			    <tr style="font-size: 1.2em; color: black;font-style:normal;">
+			        <th >Name</th>
+					<th>Company Name</th>
+					<th>Email</th>
+					<th>Phone</th>
+					<th>Receivables</th>
+					<th>Payables</th>
+	            </tr>
+			</thead>
+			    <tbody>
+			    {% for contact in vendor_list|dictsort:"fname" %}
+			    	<tr style="font-size: 1.2em; color: black;font-style:normal;" ">
+
+			    		<td><a href="/contacts/detailed/{{ contact.id }}">{{ contact.fname }}</a></td>
+			    		<td>{{ contact.company_name }}</td>
+			    		<td>{{ contact.email }}</td>
+			    		<td>{{ contact.phone }}</td>
+			    		<td><span class="label label-success">COMPLETED</span></td>
+			    		<td></td>
+			    	</tr>
+			    {% endfor %}
+			    </tbody>
+        </table>
+
+{% endblock %}
+<script>
+var d = fname;
+
+</script>

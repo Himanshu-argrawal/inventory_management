@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row" style="border-bottom: 1px solid black; font-size: 1.9em; padding-bottom: 5px; padding-right: 5px;">
+    Adjust Product
+    </div>
+    <div class="row" style="height: 30px;">
+    </div>
+    <div>
+        <form action="" method="post" > {% csrf_token %}
+            <div class="row">
+                <div class="col-md-3">
+                QUANTITY AVAILABLE:
+                </div>
+                <div class="col-md-9">
+                <input type="number" name="quantity_show" style="width: 70%" value="{{ instance.product_count }}" disabled>
+                </div>
+                <br></br>
+                <div class="col-md-3">
+                ADD QUANTITY :
+                </div>
+                <div class="col-md-9">
+                <input type="number" name="product_quantity_add" style="width: 70%" value="0">
+                </div>
+                <br></br>
+                <div class="col-md-3">
+                CURRENT PRICE:
+                </div>
+                <div class="col-md-9">
+                <input type="number" name="prouct_value" style="width: 70%" value="{{ instance.product_cost }}" disabled>
+                </div>
+                <br></br>
+                <div class="col-md-3">
+                NEW PRICE:
+                </div>
+                <div class="col-md-9">
+                <input type="number" name="product_new_value" style="width: 70%" value="{{ instance.product_cost }}">
+                </div>
+                <br><br>
+                 <div class="col-md-3">
+                REASON:
+                </div>
+                <div class="col-md-9">
+                <textarea name="product_reason" style="width: 70%;" rows="2" value="{{ instance.product_cost }}">
+                </textarea>
+                </div>
+                <br><br><br>
+                <div class="col-md-3" style="margin-left: 16px; "></div>
+                <input type="submit" class="btn-info" value="Submit" style="padding-left: 10px;">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

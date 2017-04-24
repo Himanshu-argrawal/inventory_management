@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+    </div>
+    <div class="col-md-4">
+        <button>New</button>
+    </div>
+</div>
+{% load mathfilters %}
+<table class="table table-striped">
+ <thead>
+     <tr>
+         <th>Name</th>
+         <th>Available</th>
+         <th>Reorder Level</th>
+     </tr>
+ </thead>
+ <tbody>
+ {% for p in product %}
+     <tr>
+         <td><a href="/product/adjust/{{ p.id }}">{{ p.name }}</a></td>
+         <td>{{ p.product_count }}</td>
+         <td>{{ p.product_minstock }}</td>
+     </tr>
+ {% endfor %}
+ </tbody>
+</table>
+
+{% endblock %}
