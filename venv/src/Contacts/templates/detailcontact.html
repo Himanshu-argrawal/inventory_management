@@ -1,55 +1,69 @@
 {% extends "base.html" %}
 {% block content %}
+<style>
+.st{
+color: #000000;
+font-size: 1.2em;
+;
+}
+.stt{
+color: #000000;
+font-size: 1.08em;
+;
+}
+</style>
 <div class="row" style="height: 20px;">
 </div>
 <div class="col-md-3"></div>
 <div class="col-md-6">
     <div class="panel">
-        <div class="panel-heading" style="border-bottom: 1px solid">
-        <center>Details</center>
+        <div class="panel-heading" style="border-bottom: 1px solid;font-size: 2.1em;">
+        <center><b>Details</b></center>
         </div>
         <div class="panel-body">
-        <div class="col-md-4">
+        <div class="col-md-4 stt">
         Company Name :
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 st" >
         {{ instance.company_name }}
         </div>
         </div>
         <div class="panel-body">
-        <div class="col-md-4">
+        <div class="col-md-4 stt">
         Name :
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 st">
         {{ instance.fname }}{{ instance.lname }}
         </div>
         </div>
 
         <div class="panel-body">
-        <div class="col-md-4">
+        <div class="col-md-4 stt">
         Mobile :
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 st">
         {{ instance.phone }}
         </div>
         </div>
 
         <div class="panel-body">
-        <div class="col-md-4">
+        <div class="col-md-4 stt">
         Address :
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 st">
         {{ instance.address }}
         </div>
         </div>
 
         <div class="panel-body">
-        <div class="col-md-4">
+        <div class="col-md-4 stt">
         Email :
         </div>
-        <div class="col-md-8">
+        <div class="col-md-8 st">
         {{ instance.address }}
         </div>
+        <br>
+        <center><button class="btn-info" style="font-size: 20px; margin-top: 30px;">EDIT</button></center>
         </div>
 
     </div>

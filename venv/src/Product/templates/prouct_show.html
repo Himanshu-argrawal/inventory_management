@@ -1,18 +1,14 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="row" style="border-bottom: 1px solid black;">
-    <div class="col-md-8">
-            <p style="font-size: 1.5em; padding-top: 3px;color: black; font-style:normal;">Products</p>
+<div class="row" style="border-bottom: 1px solid black;color: black; font-size: 2.1em; padding-bottom: 5px; padding-top: 5px; font-family:raleway-extra-light; ">
+                <span style="margin: 30px;">Items</span>
+                <button class="btn-info pull-right" style="font-size: 0.6em; margin-right: 100px; margin-top: 5px;" >
+		        <a style="color: black;" href="{% url 'products:product_add' %}">New +
+		        </a> </button>
             </div>
-    <div class="col-md-4" style="padding-top: 5px;">
-            <button class="btn-info" style="width: 75px; " >
-            <a style="color: black;" href="{% url 'products:product_add' %}">New +
-            </a> </button>
-            </div>
-</div>
 {% load mathfilters %}
-<table class="table table-striped">
+<table class="table table-striped"style="margin-top: 10px;">
  <thead>
      <tr style="font-size: 1.2em; color: black;font-style:normal;">
          <th>Name</th>

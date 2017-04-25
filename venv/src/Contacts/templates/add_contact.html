@@ -39,9 +39,8 @@ width: 30%;
 </script>
 <form name="myForm" action=""  method="post">{% csrf_token %}
     <div class="container">
-    <div class="row" style="border-bottom: 1px solid black;color: black; font-size: 1.9em; padding-bottom: 5px; padding-top: 5px;">
-    New Contact
-
+    <div class="row" style="border-bottom: 1px solid black;color: black; font-size: 2.1em; padding-bottom: 5px; padding-top: 5px; font-family:raleway-extra-light; ">
+    <p style="margin: 15px;">New Contact</p>
     </div>
     <div class="row" style="margin: 40px;color: black;">
             <div class="col-md-3">
@@ -91,7 +90,7 @@ width: 30%;
             </div>
             <div class="col-md-9">
             <input type="radio" value="custumer" name="contact_type"> Customer
-            <input type="radio" value="endor" name="contact_type"> Vendor <span id="demo4" style="color: red; font-size: 1.1em" > </span>
+            <input type="radio" value="vendor" name="contact_type"> Vendor <span id="demo4" style="color: red; font-size: 1.1em" > </span>
             </div>
             <br><br>
             <div class="" style="padding-left: 26.5%;">

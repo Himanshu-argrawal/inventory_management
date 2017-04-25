@@ -6,7 +6,7 @@ from django.urls import reverse , reverse_lazy
 from django.views.generic import ListView , View ,DeleteView ,CreateView ,RedirectView , DetailView , TemplateView
 from .models import User
 from .forms import Register_form , Register_formTwo ,LoginForm
-
+from Product.models import product
 # Create your views here.
 class Homepage(TemplateView):
     template_name = "index.html"
@@ -53,7 +53,6 @@ class Login(View):
                     if (user.username == username and user.password ==password):
                         request.session['username'] = username
                         request.session['password'] = password
-                        uname = request.session['username']
                         return redirect('/accounts/dashboard/')
                     else:
                         return HttpResponseRedirect(reverse_lazy('home'))
@@ -73,7 +72,13 @@ class Home(View):
             print(request.user)
             uname = request.session['username']
             instance = get_object_or_404(User , username = uname)
+            productinstance = product.objects.filter(user =instance)
+            top = productinstance.order_by("product_sold")[:1]
+            for i in productinstance:
+                print(productinstance)
             context = {
+            "top":top,
+            "product":productinstance,
             "instance":instance,
             }
             return render(request , "dashboard.html" , context)

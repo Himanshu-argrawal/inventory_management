@@ -78,13 +78,39 @@
 								<div class="col-md-6">
 									<div class="panel panel-default">
 										<div class="panel-heading">PRODUCT DETAIL</div>
-										<div class="panel-body">this is a sample panel</div>
+										<table style="margin: 10px;">
+										    <tr>
+										    <th style="columns:3;">Name</th>
+										    <th style="columns:2;">Items Available</th>
+										    <th>Item Sold</th>
+										    </tr>
+                                            {% for i in product %}
+										    <tr>
+										    <td style="padding-top: 10px; color: #000000"><b>{{ i.name }}</b></td>
+										    <td style="padding-top: 10px; color: #000000"><b>{{ i.product_count }}</b></td>
+										    <td style="padding-top: 10px; color: #000000"><b>{{ i.product_sold }}</b></td>
+										    </tr>
+										    {% endfor %}
+										</table>
 									</div>
 								</div>
 								<div class="col-md-6">
 									<div class="panel panel-default">
 										<div class="panel-heading">Top Selling Items</div>
-										<div class="panel-body">Sampe</div>
+										<table style="margin: 10px;">
+										    <tr>
+										    <th style="columns:3;">Name</th>
+										    <th style="columns:2;">Items Available</th>
+										    <th>Item Sold</th>
+										    </tr>
+                                            {% for i in top %}
+										    <tr>
+										    <td style="padding-top: 10px; color: #000000"><b>{{ i.name }}</b></td>
+										    <td style="padding-top: 10px; color: #000000"><b>{{ i.product_count }}</b></td>
+										    <td style="padding-top: 10px; color: #000000"><b>{{ i.product_sold }}</b></td>
+										    </tr>
+										    {% endfor %}
+										</table>
 									</div>
 								</div>
 							</div>
@@ -136,34 +162,8 @@
 												<td>Oct 21, 2016</td>
 												<td><span class="label label-success">COMPLETED</span></td>
 											</tr>
-											<tr>
-												<td><a href="#">763649</a></td>
-												<td>Amber</td>
-												<td>$62</td>
-												<td>Oct 21, 2016</td>
-												<td><span class="label label-warning">PENDING</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763650</a></td>
-												<td>Michael</td>
-												<td>$34</td>
-												<td>Oct 18, 2016</td>
-												<td><span class="label label-danger">FAILED</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763651</a></td>
-												<td>Roger</td>
-												<td>$186</td>
-												<td>Oct 17, 2016</td>
-												<td><span class="label label-success">SUCCESS</span></td>
-											</tr>
-											<tr>
-												<td><a href="#">763652</a></td>
-												<td>Smith</td>
-												<td>$362</td>
-												<td>Oct 16, 2016</td>
-												<td><span class="label label-success">SUCCESS</span></td>
-											</tr>
+
+
 										</tbody>
 									</table>
 								</div>

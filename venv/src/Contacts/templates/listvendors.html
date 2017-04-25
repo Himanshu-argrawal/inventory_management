@@ -2,14 +2,12 @@
 
 {% block content %}
         <div class="container">
-	        <div class="col-md-8">
-	        <p style="font-size: 1.5em; padding-top: 15px;color: black; font-style:normal;"">Vendors</p>
-	        </div>
-	        <div class="col-md-4" style="padding-top: 15px;">
-		    <button class="btn-info" style="width: 75px; " >
-		    <a style="color: black;" href="{% url 'contacts:add_contact' %}">New +</a>
-		    </button>
-	        </div>
+	        <div class="row" style="border-bottom: 1px solid black;color: black; font-size: 2.1em; padding-bottom: 5px; padding-top: 5px; font-family:raleway-extra-light; ">
+                <span style="margin: 15px;">Vendors</span>
+                <button class="btn-info pull-right" style="font-size: 0.6em; margin-right: 100px; margin-top: 5px;" >
+		        <a style="color: black;" href="{% url 'contacts:add_contact' %}">New +
+		        </a> </button>
+            </div>
         </div>
         <table class="table table-striped">
 			<thead>
@@ -19,7 +17,7 @@
 					<th>Email</th>
 					<th>Phone</th>
 					<th>Receivables</th>
-					<th>Payables</th>
+
 	            </tr>
 			</thead>
 			    <tbody>
@@ -31,7 +29,7 @@
 			    		<td>{{ contact.email }}</td>
 			    		<td>{{ contact.phone }}</td>
 			    		<td><span class="label label-success">COMPLETED</span></td>
-			    		<td></td>
+
 			    	</tr>
 			    {% endfor %}
 			    </tbody>

@@ -24,8 +24,7 @@ def product_add(request):
                     product_count = product_count , product_minstock = product_minstock,product_total = product_total ,
                     tax_rate = tax_rate ,product_sell = product_sell,tax_name = tax_name  )
         p.save()
-
-        return redirect('/accounts/dashboard')
+        return redirect('/products/show')
     context = {
 
     }
